@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+@import "core/config";
 @import "core/fonts";
 @import "core/reset";
 @import "core/colors";
@@ -7,4 +8,5 @@
 @import "core/base";
 
 @import "ui/header";
+@import "ui/footer";
 @import "ui/listings";
