@@ -1,0 +1,5 @@
+section.upcoming
+  h2 Upcoming movies
+
+  - @upcoming.each do |movie|
+    = render partial: "movie", locals: { movie: movie }

@@ -1,0 +1,7 @@
+article.movie
+  = image_tag movie.posters.thumbnail, alt: movie.title
+  h2 = movie.title
+  p
+    - if movie.ratings.critics_score > 0
+      strong #{movie.ratings.critics_score / 10} / 10
+    = movie.release_dates.theater

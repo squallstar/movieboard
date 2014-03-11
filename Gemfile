@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails'
 
 # Config files
 gem 'rails_config'
@@ -10,7 +10,7 @@ gem 'rails_config'
 gem 'dotenv-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # Upload to S3
 gem 'paperclip'
@@ -19,14 +19,19 @@ gem 'aws-sdk'
 # Memcache
 gem 'memcachier'
 
+# Template engine
+gem 'slim-rails'
+
+# Rottentomatoes API
+gem 'rottentomatoes'
+
 # Assets
 gem 'sass-rails'
-gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'unf'
 gem 'asset_sync'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -38,14 +43,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
 group :development do
   # Eager loading
   gem 'bullet'
-
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 
   # Quiet Assets turns off the Rails asset pipeline log
   gem 'quiet_assets'
@@ -57,17 +59,11 @@ group :development, :production do
 end
 
 group :production do
-  # PostgreSQL adapter
-  gem 'pg'
-
   # Memcachier storage
   gem 'dalli'
 
   # Heroku logs and assets
   gem 'rails_12factor'
-
-  # New relic for heroku
-  gem 'newrelic_rpm'
 
   gem 'rack-cache'
 end
