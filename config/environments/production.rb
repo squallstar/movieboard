@@ -26,11 +26,14 @@ Movieboard::Application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
-
-  # Generate digests for assets URLs.
+  # Enable the asset pipeline
+  config.assets.enabled = true
+  config.assets.compress = true
   config.assets.digest = true
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+  config.assets.initialize_on_precompile = true
+  #config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.prefix = "/assets"
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
@@ -64,6 +67,9 @@ Movieboard::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+
+  # Memcache store
+  config.cache_store = :dalli_store
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
