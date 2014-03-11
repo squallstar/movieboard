@@ -1,3 +1,36 @@
 article.movie
-  .cover style="background-image:url(#{movie.posters.detailed})"
+  .thumb style="background-image:url(#{movie.posters.detailed})"
   h3 = movie.title
+
+  .details
+    .content
+      .cover style="background-image:url(#{movie.posters.original})"
+      .info
+        h4
+          = movie.title
+          - if movie.ratings.critics_score > 0
+            span.rating #{(movie.ratings.critics_score+0.0) / 10} / 10
+
+        p.synopsis = movie.synopsis
+
+        blockquote = movie.critics_consensus
+
+        ul.i
+          li
+            strong Stars:
+            p = movie.abridged_cast.map{ |person| person.name }.join ', '
+
+          - if movie.ratings.audience_score
+            li
+              strong Audience rating:
+              p
+                = movie.ratings.audience_rating
+                span.rating #{(movie.ratings.audience_score+0.0) / 10} / 10
+
+          - if movie.release_dates.theater
+            li
+              strong In theaters
+              p = DateTime.parse(movie.release_dates.theater).strftime('%b %d, %Y')
+          li
+            strong Runtime:
+            p #{movie.runtime}m

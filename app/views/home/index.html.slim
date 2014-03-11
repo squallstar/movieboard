@@ -6,7 +6,7 @@
       li
         = link_to "Upcoming", "#upcoming"
       li
-        = link_to "In theathers", "#in_theathers"
+        = link_to "In theaters", "#in_theaters"
 
     .sections
       section.boxoffice.current
@@ -17,6 +17,6 @@
         - @upcoming.each do |movie|
           = render partial: "movie", locals: { movie: movie }
 
-      section.in_theathers
-        - @in_theathers.each do |movie|
+      section.in_theaters
+        - @in_theaters.each do |movie|
           = render partial: "movie", locals: { movie: movie }

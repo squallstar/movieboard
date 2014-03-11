@@ -16,3 +16,9 @@
 
       $listings.find(".sections section.#{selected}").fadeIn 250, ->
         $(@).addClass('current').removeAttr 'style'
+
+  $listings.find('.thumb, h3').click ->
+    $(@).parent().find('.details').addClass 'visible'
+
+  $listings.find('.details').click ->
+    $(@).removeClass 'visible'
