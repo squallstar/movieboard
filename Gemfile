@@ -51,14 +51,14 @@ group :development do
 
   # Quiet Assets turns off the Rails asset pipeline log
   gem 'quiet_assets'
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :development, :production do
   # Multi thread app server
   gem "puma"
-
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 end
 
 group :production do
