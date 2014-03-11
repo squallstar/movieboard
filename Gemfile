@@ -56,11 +56,17 @@ end
 group :development, :production do
   # Multi thread app server
   gem "puma"
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :production do
   # Memcachier storage
   gem 'dalli'
+
+  # PostgreSQL adapter
+  gem 'pg'
 
   # Heroku logs and assets
   gem 'rails_12factor'
