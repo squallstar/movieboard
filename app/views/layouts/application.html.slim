@@ -1,0 +1,13 @@
+doctype html
+html dir='ltr' lang='en' prefix='og: http://ogp.me/ns schema: http://schema.org/' itemscope='' itemtype='http://schema.org/WebPage'
+  head
+    title #{@title ? @title + ' - ' : ''}Movieboard
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico'
+  body
+    #w
+      = render partial: "layouts/header"
+      = yield
+      = render partial: "layouts/footer"

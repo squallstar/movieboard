@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+
+//= require_tree ./core
+//= require_tree ./hooks
+
+$(document).on("page:change", function(){
+  Turbolinks.pagesCached(5);
+  Movieboard.run();
+});

@@ -1,5 +1,22 @@
-section.upcoming
-  h2 Upcoming movies
+.frame
+  section.listings
+    ul
+      li
+        = link_to "Box office", "#boxoffice", class: 'current'
+      li
+        = link_to "Upcoming", "#upcoming"
+      li
+        = link_to "In theathers", "#in_theathers"
 
-  - @upcoming.each do |movie|
-    = render partial: "movie", locals: { movie: movie }
+    .sections
+      section.boxoffice.current
+        - @boxoffice.each do |movie|
+          = render partial: "movie", locals: { movie: movie }
+
+      section.upcoming
+        - @upcoming.each do |movie|
+          = render partial: "movie", locals: { movie: movie }
+
+      section.in_theathers
+        - @in_theathers.each do |movie|
+          = render partial: "movie", locals: { movie: movie }

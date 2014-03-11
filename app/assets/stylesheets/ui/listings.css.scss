@@ -1,0 +1,70 @@
+.listings {
+
+  > ul {
+    @extend %clear;
+    margin-bottom: 30px;
+
+    li {
+      display: inline-block;
+      float: left;
+
+      a {
+        width: 130px;
+        font-size: 12px;
+        display: block;
+        color: #888;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 2px solid #F0F0F0;
+
+        &.current {
+          color: $color-primary;
+          border-bottom-color: $color-primary;
+        }
+      }
+
+      &:first-child a {
+        padding-left: 0;
+      }
+    }
+  }
+
+  .sections {
+    $spacer: 10px;
+    $height: 300px;
+    $cover-height: 270px;
+    $per-row: 5;
+
+    section {
+      @extend %clear;
+      display: none;
+      margin: 0 -$spacer;
+
+      &.current {
+        display: block;
+      }
+
+      article {
+        float: left;
+        width: 100% / $per-row;
+        height: $height;
+        padding: 0 $spacer $spacer $spacer;
+        margin-bottom: $spacer * 2;
+
+        .cover {
+          height: $cover-height;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center center;
+        }
+
+        h3 {
+          @extend %ellipsis;
+          height: $height - $cover-height;
+          line-height: $height - $cover-height;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
